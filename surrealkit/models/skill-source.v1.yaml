@@ -1,0 +1,44 @@
+object: skill_source_v1
+kind: native_artifact
+owner: Agent-Skills
+semantic_class: CreativeWork
+context: grammar_context:agent_graph_content
+source_of_truth: surrealkit_model
+
+generated:
+  surrealql: true
+  migration: true
+  ci_validation: true
+
+fields:
+  skill_id:
+    type: string
+    required: true
+
+  name:
+    type: string
+    required: true
+
+  version:
+    type: semver
+    required: true
+
+  lifecycle_status:
+    type: enum
+    values:
+      - draft
+      - reviewed
+      - approved
+      - published
+      - deprecated
+
+  category:
+    type: string
+
+  risk:
+    type: enum
+    values:
+      - low
+      - medium
+      - high
+      - critical
